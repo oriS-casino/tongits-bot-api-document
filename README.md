@@ -79,6 +79,46 @@ Giá trị của action type.
 | `Challenge` | Thách đấu        | 6             |
 | `Fold`      | Úp bài dừng chơi | 7             |
 
+## Card Value
+
+**Suit**: giá trị tương ứng với chất của lá bài
+
+**Rank**: giá trị tương ứng với giá trị của lá bài
+
+Công thức chuyển đổi từ **card value** sang **suit** và **rank**
+
+```c#
+card_value = rank * 4 + suit 
+
+suit = card_value % 4
+
+rank = (card_value - suit) / 4
+```
+
+| Rank  | Default Value |
+|-------|---------------|
+| Two   | 0             |
+| Three | 1             |
+| Four  | 2             |
+| Five  | 3             |
+| Six   | 4             |
+| Seven | 5             |
+| Eight | 6             |
+| Nine  | 7             |
+| Ten   | 8             |
+| Jack  | 9             |
+| Queen | 10            |
+| King  | 11            |
+| Ace   | 12            |
+
+| Suit    | Default Value |
+|---------|---------------|
+| Spade   | 0             |
+| Club    | 1             |
+| Diamond | 2             |
+| Heart   | 3             |
+
+
 ## Status Code
 
 | Status Code | Description                             |
