@@ -62,9 +62,7 @@ _Response_
 |:--------------|:----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `status_code` | `int`                 | mã lỗi Success = 0, Error > 0                                                                                                                                                                            |
 | `status_desc` | `string`              | mô tả lỗi                                                                                                                                                                                                |
-| `actions`     | [`Action[]`](#action) | danh sách các hành động cho bot (theo thứ tự lần lượt). Trong trượp hơp biến **
-is_challenge = true** thì biến này sẽ trả về mảng có 1 phần tử duy nhất, và **actions[0].Type = challenge** hoặc **
-fold** |
+| `actions`     | [`Action[]`](#action) | danh sách các hành động cho bot (theo thứ tự lần lượt). Trong trượp hơp biến **is_challenge = true** thì biến này sẽ trả về mảng có 1 phần tử duy nhất, và **actions[0].Type = challenge** hoặc **fold** |
 
 ## Player
 
