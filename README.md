@@ -1,5 +1,23 @@
+**Contact Me:** https://t.me/DontBeSad_Cuz_MinhFatIsHere
+
+**Email:** dangnguyendota@gmail.com
+
 _BaseURL_: http://localhost:9702
 
+Document cho API TongIts Bot Service.
+
+Cấu trúc Bot:
+
+| Cấu trúc hệ thống                                                                                                                                                                                                                                                                | 
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **API Service:** Server nhận request từ bên ngoài                                                                                                                                                                                                                                |
+| **Input Parser:** thực hiện chuyển yêu cầu từ bên ngoài thành input cho bot.                                                                                                                                                                                                     |
+| **Tongit Filter:** Thưc hiện kiểm tra các khả năng có thể ăn TongIts mà mắt người có thể nhìn thấy được                                                                                                                                                                          |
+| **Fight/Challenge Config:** Sử dụng config để đưa ra quyết định Fight hoặc nhận Fight                                                                                                                                                                                            |
+| **Optimizer:** từ những quyết định có thể của bot, tối ưu hóa lược bớt các quyết định không giống người hoặc gây mất lợi thế                                                                                                                                                     |
+| **Bot Algorithm:** thuật toán nhận đầu vào từ Optimizer và thực hiện tính toán để đưa ra quyết định tốt nhất trong những quyết định đó                                                                                                                                           |
+| **Output Parser:** chuyển output của bot thành output mà người call API mong muốn.                                                                                                                                                                                               |
+| Service được deploy bằng **docker** giúp tối ưu hóa thời gian triển khai hệ thống, hệ thống ghi log chi tiết từng request theo ngày. Service chạy ổn định và tự động khởi động lại nếu gặp lỗi, chịu tải số lượng lớn hàng trăm nghìn bot một lúc cho một máy chủ cấu hình thấp. |
 
 ## API Ping
 
@@ -44,7 +62,9 @@ _Response_
 |:--------------|:----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `status_code` | `int`                 | mã lỗi Success = 0, Error > 0                                                                                                                                                                            |
 | `status_desc` | `string`              | mô tả lỗi                                                                                                                                                                                                |
-| `actions`     | [`Action[]`](#action) | danh sách các hành động cho bot (theo thứ tự lần lượt). Trong trượp hơp biến **is_challenge = true** thì biến này sẽ trả về mảng có 1 phần tử duy nhất, và **actions[0].Type = challenge** hoặc **fold** |
+| `actions`     | [`Action[]`](#action) | danh sách các hành động cho bot (theo thứ tự lần lượt). Trong trượp hơp biến **
+is_challenge = true** thì biến này sẽ trả về mảng có 1 phần tử duy nhất, và **actions[0].Type = challenge** hoặc **
+fold** |
 
 ## Player
 
@@ -117,7 +137,6 @@ rank = (card_value - suit) / 4
 | Club    | 1             |
 | Diamond | 2             |
 | Heart   | 3             |
-
 
 ## Status Code
 
