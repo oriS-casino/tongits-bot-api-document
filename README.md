@@ -1,7 +1,5 @@
 **Contact Me:** https://t.me/DontBeSad_Cuz_MinhFatIsHere
 
-**Email:** dangnguyendota@gmail.com
-
 _BaseURL_: http://localhost:9702
 
 Document cho API TongIts Bot Service.
