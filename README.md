@@ -28,9 +28,15 @@ Content-Type: application/json
 
 _Response_
 
-| Parameter | Type     |
-|:----------|:---------|
-| `status`  | `string` |
+| Parameter                             | Type     | Description                             |
+|:--------------------------------------|:---------|-----------------------------------------|
+| `status`                              | `string` |                                         |
+| `version`                             | `string` |                                         |
+| `number_of_request_are_being_handled` | `int`    | số lượng request đang được xử lý        |
+| `number_of_request_in_queue`          | `int`    | số lượng request đang đợi để được xử lý |
+| `number_of_threads`                   | `int`    | số luồng hệ thông đang chạy             |
+| `cpu_free`                            | `string` | số cpu free (theo %)                    |
+| `ram_free`                            | `string` | số ram free (theo %)                    |
 
 ## API Select Best Action
 
@@ -49,7 +55,7 @@ _Body_
 | `card`              | `int`                 | Lá bài người trước vừa đánh ra                                                                                                                                                                                                                                                                             |
 | `deck`              | `int[]`               | Bộ bài đang úp theo thứ tự từ lá dưới cùng đến là trên cùng (ví dụ [2, 3, 4, 5, 6] thì lá 6 là lá trên cùng, nếu người chơi bốc thì sẽ bốc lá 6)                                                                                                                                                           |
 | `is_first_play`     | `bool`                | True nếu lá lượt đánh đầu của ván (người cầm 13 lá)                                                                                                                                                                                                                                                        |
-| `interactions`      | `int`                 | Nếu set thì nên set < 100k, còn nếu không thì nên để là 0                                                                                                                                                                                                                                                  |
+| `interactions`      | `int`                 | (không được đặt nhỏ hơn 10 có thể gây lỗi) Chỉ số điều chỉnh độ thông minh của Bot, nếu unlimit có thể đặt là 1M, chú ý nếu chỉ số này càng thấp thì càng tốn ít tài nguyên của máy chủ, nên với những trường hợp cụ thể không cần bot thông minh thì có thể đặt chỉ số này là 50                          |
 | `min_thinking_time` | `int`                 | Thời gian nhỏ nhất suy nghĩ                                                                                                                                                                                                                                                                                |
 | `max_thinking_time` | `int`                 | Thời gian lớn nhất suy nghĩ (không nên để quá 2000)                                                                                                                                                                                                                                                        |
 | `bot_level`         | `int`                 | Level của bot                                                                                                                                                                                                                                                                                              |
@@ -73,6 +79,7 @@ _Response_
 | `melds`   | `int[][]` | các bộ phỏm đã hạ dưới bàn của người chơi                                                                                                  |
 | `penalty` | `bool`    | True nếu người chơi lượt tới không được Fight (bị gửi bài vào phỏm), nếu là current player mà lượt này không được Fight thì cũng bằng True |
 | `fold`    | `bool`    | True nếu người chơi đã Fold không nhận Fight, trường này chỉ dùng trong trường hợp bot đưa ra quyết định nhận Fight hay không              |
+| `is_bot`  | `bool`    | true nếu người chơi này là bot                                                                                                             |
 
 ## Action
 
