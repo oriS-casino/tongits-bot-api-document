@@ -154,6 +154,7 @@ rank = (card_value - suit) / 4
 | Queen | 10            |
 | King  | 11            |
 | Ace   | 12            |
+| Joker   | 13            |
 
 | Suit    | Default Value |
 |---------|---------------|
